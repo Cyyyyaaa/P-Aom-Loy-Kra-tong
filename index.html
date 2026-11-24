@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>A Little Loy Krathong for P'Aom</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Mali:wght@400;600&family=Fredoka:wght@600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="loader">🌙<p>กำลังจุดเทียน…</p></div>
+<div id="moon"></div><div id="petals"></div>
+
+<section class="screen on" id="welcome">
+  <div class="card">
+    <h1>Little Loy Krathong for P'Aom</h1>
+    <p class="tag">คืนนี้พระจันทร์สวย---- </p>
+    <p><br>เผื่อพี่อยากลอยกระทง<br>เลยอยากสร้างค่ำคืนเล็ก ๆ นี้ขึ้นมาให้<br><br></p>
+    <button class="btn" data-go="dress">ไปลอยกระทงกันนน</button>
+  </div>
+  <div class="water"></div>
+</section>
+
+<section class="screen" id="dress">
+  <h2>พี่ออมเลือกชุดเลยย</h2>
+  <div id="dressStage" class="stage"></div>
+  <div id="looks" class="row"></div>
+  <p id="lookInfo" class="small"></p>
+  <div class="nav"><button class="btn ghost" data-go="welcome">ย้อนกลับ</button><button class="btn" data-go="wish">ชุดนี้แหละ</button></div>
+</section>
+
+<section class="screen" id="wish">
+  <div class="stage small-stage" id="wishChar"></div>
+  <h2>ต้องอธิษฐานด้วยนะ</h2>
+  <textarea id="wishText" maxlength="300" placeholder="ปีนี้อยากให้มีเรื่องดี ๆ อะไรเกิดขึ้นบ้างนะ…"></textarea>
+  <div class="small"><span id="cnt">0</span>/300</div>
+  <div id="paper" class="paper"></div>
+  <div class="nav"><button class="btn ghost" data-go="dress">ย้อนกลับ</button><button class="btn" id="saveWish">อธิษฐาน</button></div>
+  <button class="btn" id="wishNext" data-go="kra" hidden>ไปเลือกกระทง</button>
+</section>
+
+<section class="screen" id="kra">
+  <h2>กระทงของพี่ออม</h2>
+  <div id="kraPrev" class="kprev"></div>
+  <div id="kraTypes" class="row"></div>
+  <p class="small">สีเทียน</p>
+  <div id="candles" class="row"></div>
+  <div class="nav"><button class="btn ghost" data-go="wish">ย้อนกลับ</button><button class="btn" data-go="river">กระทงพร้อมแล้ว</button></div>
+</section>
+
+<section class="screen" id="river">
+  <div id="cam">
+    <div class="lanterns">🏮 <i>🏮</i> 🏮 <i>🏮</i> 🏮</div>
+    <div class="water big"></div>
+    <div id="grp"><div id="riverChar"></div><div id="heldKra"></div></div>
+  </div>
+  <div class="bottom">
+    <p id="riverMsg">ขอให้คำอธิษฐาน<br>ของพี่ออมสมหวังทุกข้อเลยคับบบ</p>
+    <div class="nav"><button class="btn ghost" data-go="kra" id="riverBack">ย้อนกลับ</button><button class="btn" id="release">ปล่อยกระทงเลย</button></div>
+  </div>
+</section>
+
+<section class="screen" id="sky">
+  <canvas id="fw"></canvas>
+  <div id="jakeyText" aria-label="JAKEY">JAKEY</div>
+  <button class="skip" id="skip"></button>
+</section>
+
+<section class="screen" id="final">
+  <div class="card">
+    <br>ขอให้ทุกคำอธิษฐานที่เขียนไว้<br>ค่อย ๆ กลายเป็นเรื่องจริง<br><br>ขอให้มีแต่เรื่องดี ๆ เข้ามา</br>
+    <p class="tag">See you under the same moon kubb. 🌙</p>
+    <button class="btn" id="replay">กลับไปดูค่ำคืนนี้อีกครั้ง</button>
+  </div>
+</section>
+<script src="app.js"></script>
+</body>
+</html>
